@@ -350,27 +350,27 @@ def Urquhart_graph(triangles):
         (e1, e2, e3)[d.index(mn)].is_deleted = True
 
 
-w, h = 800, 800
-p = quasi_random2d(1000, w, h)
-s = dt.now()
-he, p = Delaunay_triangulation(p, w, h)
-g = get_graph(p)
+#w, h = 800, 800
+#p = quasi_random2d(1000, w, h)
+#s = dt.now()
+#he, p = Delaunay_triangulation(p, w, h)
+#g = get_graph(p)
 #bfs(g, p[0])
-triangles = get_triangles(he)
-set_colors(triangles)
-Urquhart_graph(triangles)
-print(dt.now() - s)
+#triangles = get_triangles(he)
+#set_colors(triangles)
+#Urquhart_graph(triangles)
+#print(dt.now() - s)
 
-r = 5
-colors_code = {1: "red", 2: "green", 3: "blue"}
-root = Tk()
-root.geometry(str(w) + "x" + str(h))
-c = Canvas(width=w, height=h)
-c.pack()
-for key in he:
-    e = he[key]
-    v1 = e.v1
-    if not e.is_deleted and not e.twin.is_deleted:
-        c.create_line(e.v1.x, e.v1.y, e.v2.x, e.v2.y)
-        c.create_oval(v1.x - r, v1.y - r, v1.x + r, v1.y + r, outline=colors_code[v1.color], fill=colors_code[v1.color])
-root.mainloop()
+#r = 5
+#colors_code = {1: "red", 2: "green", 3: "blue"}
+#root = Tk()
+#root.geometry(str(w) + "x" + str(h))
+#c = Canvas(width=w, height=h)
+#c.pack()
+#for key in he:
+#    e = he[key]
+#    v1 = e.v1
+#    if not e.is_deleted and not e.twin.is_deleted:
+#        c.create_line(e.v1.x, e.v1.y, e.v2.x, e.v2.y)
+#        c.create_oval(v1.x - r, v1.y - r, v1.x + r, v1.y + r, outline=colors_code[v1.color], fill=colors_code[v1.color])
+#root.mainloop()
