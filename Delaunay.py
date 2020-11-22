@@ -1,6 +1,5 @@
 from random import random as r
 from random import randint as rr
-from datetime import datetime as dt
 
 
 class Triangle:
