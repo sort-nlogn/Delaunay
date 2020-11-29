@@ -216,9 +216,7 @@ def find_triangle(p, he, cache_data):
     t = cache[int(p.x / sw)][int(p.y / sh)]
     a, b, c = t.a, t.b, t.c
     case = triangle_predicate(a, b, c, p)
-    # k = 0
     while not case:
-        # k += 1
         for u, v in ((a, b), (b, c), (c, a)):
             w = he[(u, v)].nxt.v2
             a1, a2 = sign_area(u, v, p), sign_area(u, v, w)
@@ -226,7 +224,6 @@ def find_triangle(p, he, cache_data):
                 a, b, c = v, u, he[(v, u)].nxt.v2
                 case = triangle_predicate(a, b, c, p)
                 break
-    # print(k)
     return case, a, b, c
 
 
